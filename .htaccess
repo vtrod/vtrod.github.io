@@ -1,2 +1,0 @@
-RewriteCond %{HTTP_HOST} ^https://vtrod.github.io/
-RewriteRule ^(.*) https://vic.trodd.dev/ $1 [P]

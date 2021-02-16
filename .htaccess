@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_HOST} ^DomainA.com
+RewriteRule ^(.*) https://DomainB.com/$1 [P]

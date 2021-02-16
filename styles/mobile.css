@@ -8,12 +8,6 @@
   font-family: 'Noto Sans', sans-serif;
 }
 
-body {
-  background: var(--bg);
-  display: grid;
-  grid-template-rows: 8vh 90vh;
-}
-
 
 .centered {
   margin: auto
@@ -31,38 +25,44 @@ body {
 }
 
 
+
+
+body {
+  background: var(--bg);
+  display: grid;
+  grid-template-rows: 5vh auto;
+}
+
 nav {
   display: grid;
-  grid-template-columns: 1fr 9fr 1fr;
+  grid-template-columns: auto 9fr 1fr;
   grid-template-rows: 100%
 }
 
 
 
 
-
-
-
-
 /*#Box Logo */
 @keyframes box {
-  0% {opacity: 1; transform: scale(50) translate(-100%)}
-  25% {transform: scale(50)}
-  50% {transform: scale(1)}
-  100% {opacity: 1; transform: scale(1)}
+  0% {opacity: 1; transform: scale(50)}
+  
+  60% {transform: scale(50)}
+  100% {transform: scale(1)}
 }
 
 @keyframes bg-box {
-  0% {opacity: 1; transform: scale(50) translate(-100%)}
-  25% {opacity: 1;transform: scaleX(50)}
-  26% {opacity: 0}
+  0% {opacity: 1; transform: scale(50) translateX(0%) translateY(10%) rotate(-240deg)}
+  80% {opacity: 1;transform: scale(50) translateX(-10%) translateY(-100%) rotate(0deg)}
+
+  99% {opacity: 1}
+  100% {opacity: 0;}
   
 }
 
 @keyframes shrink-into-place {
   0% {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
-  42% {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
-  72% {top: 0; left: 0; transform: translate(0)}
+  77% {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
+  96% {top: 0; left: 0; transform: translate(0)}
   
 }
 
@@ -71,26 +71,27 @@ nav {
   overflow: visible;
   position: relative;
   height: 100%;
-  animation: shrink-into-place 5s cubic-bezier(0.2, 0.85, 0.45, 1);
+  transform: translate(0);
+  animation: shrink-into-place 7s cubic-bezier(0.2, 0.85, 0.45, 1);
 }
 
 .bogo > .blue, .bogo > .background {
   animation-timing-function: cubic-bezier(0, 0.4, 0, 0.4);
+  animation-duration: 4s;
 }
 
 .bogo > .blue {
   fill: var(--t-blue);
   transform-origin: center;
   animation-name: box;
-  animation-duration: 3s;
 }
 
 .bogo > .background {
   opacity: 0;
   fill: var(--bg);
+  transform: scale(30) translateX(30%) translateY(-100%) rotate(0deg);
   transform-origin: center;
   animation-name: bg-box;
-  animation-duration: 3s;
 }
 
 .bogo > .shadow {

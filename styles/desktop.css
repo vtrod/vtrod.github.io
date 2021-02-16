@@ -1,10 +1,8 @@
 @media (orientation : landscape) {
   @keyframes bg-box {
-    0% {opacity: 1; transform: scale(100) translateX(0%) translateY(10%) rotate(-400deg)}
-    80% {opacity: 1;transform: scale(100) translateX(-10%) translateY(-100%) rotate(0deg)}
-
-    99% {opacity: 1}
-    100% {opacity: 0;}
-  
+    0%   {opacity: 1; transform: scale(100) translateX(0%)  translateY(10%)   rotate(-180deg)}
+    60%  {opacity: 1;transform: scale(100)  translateX(30%) translateY(-100%) rotate(0deg)}
+    99%  {opacity: 1}
+    100% {opacity: 0}
 }
 }

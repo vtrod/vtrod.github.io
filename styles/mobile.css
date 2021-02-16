@@ -44,39 +44,41 @@ nav {
 
 /*#Box Logo */
 @keyframes box {
-  0% {opacity: 1; transform: scale(50)}
-  
-  60% {transform: scale(50)}
+  0%   {transform: scale(50)}
+  70%  {transform: scale(50)}
+  85%  {transform: scale(0.85)}
+  86%  {transform: scale(1)}
   100% {transform: scale(1)}
 }
 
 @keyframes bg-box {
-  0% {opacity: 1; transform: scale(50) translateX(0%) translateY(10%) rotate(-240deg)}
-  80% {opacity: 1;transform: scale(50) translateX(-10%) translateY(-100%) rotate(0deg)}
-
-  99% {opacity: 1}
-  100% {opacity: 0;}
-  
+  0%   {opacity: 1; transform: scale(40) translateX(0%)  translateY(10%)   rotate(-180deg)}
+  50%  {opacity: 1; transform: scale(40) translateX(30%) translateY(-100%) rotate(0deg)}
+  99%  {opacity: 1}
+  100% {opacity: 0}
 }
 
+
+
 @keyframes shrink-into-place {
-  0% {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
-  77% {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
-  100% {top: 0; left: 0; transform: translate(0)}
+  0%   {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%); cursor: default}
+  75%  {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
+  100% {top: 0;    left: 0;      transform: translate(0); cursor: default}
   
 }
 
 
 .bogo {
+  cursor: pointer;
   overflow: visible;
   position: relative;
   height: 100%;
   transform: translate(0);
-  animation: shrink-into-place 7s cubic-bezier(0.2, 0.85, 0.45, 1);
+  animation: shrink-into-place 5s ease-in-out;
 }
 
 .bogo > .blue, .bogo > .background {
-  animation-timing-function: cubic-bezier(0, 0.4, 0, 0.4);
+  animation-timing-function: cubic-bezier(0.25, 0.75, 1, 0.25);
   animation-duration: 4s;
 }
 

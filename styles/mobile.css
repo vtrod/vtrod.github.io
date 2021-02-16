@@ -62,8 +62,7 @@ nav {
 @keyframes shrink-into-place {
   0% {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
   77% {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
-  96% {top: 0; left: 0; transform: translate(0)}
-  100% {transform: translate(0)}
+  100% {top: 0; left: 0; transform: translate(0)}
   
 }
 

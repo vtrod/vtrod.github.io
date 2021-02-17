@@ -28,21 +28,84 @@
 
 
 body {
+  margin: 0;
   background: var(--bg);
   display: grid;
-  grid-template-rows: 5vh auto;
+  grid-template-rows: 10vh auto;
 }
 
 nav {
-  display: grid;
-  grid-template-columns: auto 9fr 1fr;
-  grid-template-rows: 100%
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@keyframes disable-hover {
+  0%   {pointer-events: none}
+  100% {pointer-events: none}
+}
+
+.plate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  cursor: pointer;
+  grid-column-start: 3;
+  justify-self: flex-end;
+  width: 10vh;
+  height: 10vh;
+
+  border-bottom-left-radius: 5vh;
+  background-color: #fff;
+
+  transition: all 0.2s ease-out;
+  animation: disable-hover 5s;
+}
+
+.plate.reversed {
+  background-color: var(--t-blue);
+  justify-self: flex-start;
+  grid-column-start: 1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 5vh;
+}
+
+.plate.reversed:hover {
+  transform-origin: top left;
+}
+
+.plate:hover {
+  transform-origin: top right;
+  width: 15vh;
+  transition: width 0.2s ease-in-out;
+}
+
+.hamburger {
+  display: block;
+  width: 5vh;
+  height: 2.5vh;
+  transform: scaleY(0.25);
+  border-radius: 4px;
+  background-color: var(--t-blue);
+  margin-bottom: -0.5vh;
+  margin-left: 2vh;
+}
+
+.hamburger:nth-of-type(2) {
+  width: 3.5vh;
+  margin-left: 3.5vh;
+}
+
+.hamburger:nth-of-type(3) {
+  width: 2vh;
+  margin-left: 5vh;
 }
 
 
 
-
-/*#Box Logo */
+/* Box Logo */
 @keyframes box {
   0%   {transform: scale(50)}
   70%  {transform: scale(50)}
@@ -61,18 +124,21 @@ nav {
 
 
 @keyframes shrink-into-place {
-  0%   {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%); cursor: default}
-  75%  {top: 49vh; left: 47.1vw; transform: translate(-50%, -50%)}
-  100% {top: 0;    left: 0;      transform: translate(0); cursor: default}
+  0%   {top: 50vh; left: 50vw; transform: translate(-100%, -100%); cursor: default}
+  75%  {top: 50vh; left: 50vw; transform: translate(-100%, -100%)}
+  100% {top: 0;    left: 0;      transform: translateX(0); cursor: default}
   
 }
 
 
 .bogo {
-  cursor: pointer;
+  justify-self: flex-end;
+  align-self: flex-end;
+  margin: 2.5vh;
+  z-index: 128;
   overflow: visible;
   position: relative;
-  height: 100%;
+  height: 50%;
   transform: translate(0);
   animation: shrink-into-place 5s ease-in-out;
 }

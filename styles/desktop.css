@@ -1,8 +1,69 @@
-@media (orientation : landscape) {
+@media (orientation: landscape) {
+  @-webkit-keyframes box {
+    0% {
+      -webkit-transform: scale(60);
+              transform: scale(60);
+    }
+    50% {
+      -webkit-transform: scale(60);
+              transform: scale(60);
+    }
+    62% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes box {
+    0% {
+      -webkit-transform: scale(60);
+              transform: scale(60);
+    }
+    50% {
+      -webkit-transform: scale(60);
+              transform: scale(60);
+    }
+    62% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @-webkit-keyframes bg-box {
+    0% {
+      opacity: 1;
+      -webkit-transform: scale(60) translateX(20%) translateY(0%) rotate(80deg);
+              transform: scale(60) translateX(20%) translateY(0%) rotate(80deg);
+    }
+    82% {
+      opacity: 1;
+      -webkit-transform: scale(60) translateX(-10%) translateY(-100%) rotate(-120deg);
+              transform: scale(60) translateX(-10%) translateY(-100%) rotate(-120deg);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   @keyframes bg-box {
-    0%   {opacity: 1; transform: scale(100) translateX(0%)  translateY(10%)   rotate(-180deg)}
-    60%  {opacity: 1;transform: scale(100)  translateX(30%) translateY(-100%) rotate(0deg)}
-    99%  {opacity: 1}
-    100% {opacity: 0}
+    0% {
+      opacity: 1;
+      -webkit-transform: scale(60) translateX(20%) translateY(0%) rotate(80deg);
+              transform: scale(60) translateX(20%) translateY(0%) rotate(80deg);
+    }
+    82% {
+      opacity: 1;
+      -webkit-transform: scale(60) translateX(-10%) translateY(-100%) rotate(-120deg);
+              transform: scale(60) translateX(-10%) translateY(-100%) rotate(-120deg);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
-}
+/*# sourceMappingURL=desktop.css.map */

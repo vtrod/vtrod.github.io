@@ -1,0 +1,14 @@
+@media (orientation: landscape) {
+  @keyframes box {
+    0%   {transform: scale(60)}
+    50%  {transform: scale(60)}
+    62%  {transform: scale(1)}
+    100% {transform: scale(1)}
+  }
+
+  @keyframes bg-box {
+  0%   {opacity: 1; transform: scale(60) translateX(20%)  translateY(0%)   rotate(80deg)}
+  82%  {opacity: 1; transform: scale(60) translateX(-10%) translateY(-100%) rotate(-120deg)}
+  100% {opacity: 1}
+  }
+}

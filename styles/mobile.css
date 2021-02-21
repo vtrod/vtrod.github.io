@@ -129,6 +129,7 @@ ul {
 }
 
 .tab.bookmark-right {
+  z-index: 128;
   border-bottom-right-radius: 5vh;
   padding-left: 2vh;
 }

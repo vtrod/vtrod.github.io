@@ -1,0 +1,256 @@
+$font: 'Noto Sans', sans-serif;
+$t-blue: #0094FF;
+$bg-col: #242424;
+$orange: #EE7674;
+
+/* disables interactions (used in page load animation) */
+@keyframes disabled {
+  0%   {pointer-events: none}
+  100% {pointer-events: none}
+}
+
+* {
+  background: $bg-col;
+  color: $t-blue;
+  font-family: $font;
+  font-weight: 700;
+
+  /* disable interactions of everything for the first 2.5s of page loading so that loading animations play and you can't stop them >:) */
+  animation: disabled 2.8s; 
+
+  &:focus {
+    outline: $orange dotted
+  }
+}
+
+.centered {
+  margin: auto
+}
+
+.fill {
+  width: 100%;
+  height: 100%
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.column {
+    flex-direction: column;
+
+    &.reversed {
+      flex-direction: column-reverse
+    }
+
+    &.left {
+      align-items: flex-start
+    }
+  }
+
+  &.reversed {
+    flex-direction: row-reverse
+  }
+
+  &.between {
+    justify-content: space-between
+  }
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 10vh auto
+}
+
+ul {
+  list-style: none;
+  padding-left: 10%;
+}
+
+.tab {
+  position: sticky;
+  width: fit-content;
+
+  padding: 1vh;
+  height: 8vh;
+
+  background: #fff;
+  transition: padding 0.2s ease-in-out;
+  
+  &.bookmark {
+    &-left {
+      border-bottom-left-radius: 5vh;
+      padding-right: 2vh;
+
+      &:hover {
+        padding-right: 3vh
+      }
+
+      &.open {
+        padding-right: 50%
+      }
+    }
+
+    &-right {
+      border-bottom-right-radius: 5vh;
+      padding-left: 2vh;
+
+      &:hover {
+        padding-left: 3vh
+      }
+    }
+  }
+
+  & > .menu.open {
+    padding-right: 45%
+  }
+}
+
+.hamburger {
+  background: none;
+  width: 100%;
+  height: 100%;
+  
+  &> * {
+    display: block;
+    height: 2.5vh;
+    transform: scaleY(0.25);
+    border-radius: 0.5vh;
+    background: $t-blue;
+    margin-bottom: -0.75vh;
+  
+    @for $i from 1 to 4 {
+      &:nth-of-type(#{$i}) {
+        width: (6.5 - ($i * 1.5vh));
+        margin-left: (0.5 + ($i * 1.5vh));
+      }
+    }
+  }
+}
+
+
+
+.menu {
+  cursor: default;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 92vh;
+  width: 50vw;
+  background: inherit;
+  color: $bg-col;
+  position: fixed;
+  right: -50%;
+  top: 8vh;
+
+  transition: padding-right 0.2s ease-in-out;
+
+  &> * {
+    background: inherit;
+    color: $bg-col;
+  }
+
+  & > p {
+    padding-left:10%;
+  }
+
+  &-list {
+    
+
+    &> * {
+      cursor: pointer;
+      background: none;
+      color: inherit;
+      font-weight: 700;
+      font-size: larger;
+      margin-bottom: 10%
+    }
+  }
+}
+
+/* Box Logo */
+@keyframes box {
+  0%   {transform: scale(40)}
+  50%  {transform: scale(40)}
+  62%  {transform: scale(1)}
+  100% {transform: scale(1)}
+}
+
+@keyframes bg-box {
+  0%   {opacity: 1; transform: scale(35) translateX(10%)  translateY(10%)   rotate(80deg)}
+  82%  {opacity: 1; transform: scale(35) translateX(-20%) translateY(-100%) rotate(-200deg)}
+  100% {opacity: 1}
+}
+
+.bogo {
+  z-index: 128;
+  width: 7vh;
+  
+  background: none;
+  overflow: visible;
+
+  align-self: flex-end;
+  margin-right: 10%;
+
+  > .blue, > .background {
+    transform-origin: center;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+  }
+  
+  > .blue {
+    animation-name: box;
+  }
+  
+  > .background {
+    opacity: 0;
+    fill: $bg-col;
+    transform: scale(30) translateX(30%) translateY(-100%) rotate(0deg);
+
+    animation-name: bg-box;
+  }
+
+  > .char-group {
+
+    transform-origin: top left;
+
+
+    > .shadow {
+      fill: #1d1d1d;
+      mix-blend-mode: multiply
+    }
+  
+    > .half {
+      opacity: 0.5
+    }
+  
+    > .quarter {
+      opacity: 0.25
+    }
+  
+    > .char {
+      fill: #fff
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.blue {
+  background: $t-blue;
+  fill: $t-blue;
+  color: $t-blue
+}

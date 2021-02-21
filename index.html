@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   <title>Vic Trodd ● Web & Software Developer</title>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -12,28 +14,39 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <body>
   <!-- page content -->
   <header class="fill" id="navigation">
-    <nav class="fill">
-      <span class="plate reversed">
-        <svg viewBox="0 0 96 96" class="bogo">
+    <nav class="fill flex between">
+      <span id="logo" class="tab bookmark-right flex column blue">
+        <svg viewBox="0 0 96 96" class="clickable bogo">
           <rect class="blue" width="96" height="96" rx="8" />
-          <polygon class="shadow half" points="52 16 52 44 52 84 60 84 60 44 76 44 76 16 52 16" />
-          <polygon class="shadow quarter" points="52 36 52 40 52 84 56 84 56 40 68 40 68 36 52 36" />
-          <rect class="shadow quarter" x="52" y="36" width="16" height="2" />
-          <rect class="shadow quarter" x="52" y="36" width="16" height="1" />
-          <polygon class="char" points="16 16 16 36 32 36 32 84 52 84 52 36 68 36 68 16 16 16" />
-          <rect class="background" width="96" height="96" rx="40" />
+          <g class="char-group">
+            <polygon class="shadow half" points="52 16 52 44 52 84 60 84 60 44 76 44 76 16 52 16" />
+            <polygon class="shadow quarter" points="52 36 52 40 52 84 56 84 56 40 68 40 68 36 52 36" />
+            <rect class="shadow quarter" x="52" y="36" width="16" height="2" />
+            <rect class="shadow quarter" x="52" y="36" width="16" height="1" />
+            <polygon class="char" points="16 16 16 36 32 36 32 84 52 84 52 36 68 36 68 16 16 16" />
+          </g>
+          <rect class="background" width="96" height="96" rx="36" />
         </svg>
       </span>
-      <span class="plate">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
+      <span id="menu-tab" class="tab bookmark-left flex column left menu-element">
+        <div id="menu-button" class="clickable hamburger flex column menu-element menu-button">
+          <span class="menu-element menu-button"></span>
+          <span class="menu-element menu-button"></span>
+          <span class="menu-element menu-button"></span>
+        </div>
+        <div id="menu" class="menu flex column menu-element">
+          <ul class="menu-list menu-element">
+            <li class="menu-element">Home</li>
+            <li class="menu-element">Projects</li>
+            <li class="menu-element">About</li>
+          </ul>
+          <p class="menu-element">&copy; Vic Trodd 2021</p>
+        </div>
       </span>
     </nav>
   </header>
@@ -44,6 +57,7 @@
 
 
   <!-- scripts -->
+  <script src="scripts/main.js"></script>
   <script></script>
 </body>
 

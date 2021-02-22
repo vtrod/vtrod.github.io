@@ -102,10 +102,6 @@ ul {
       z-index: 128;
       border-bottom-right-radius: 5vh;
       padding-left: 2vh;
-
-      &:hover {
-        padding-left: 3vh
-      }
     }
   }
 
@@ -169,7 +165,7 @@ ul {
       background: none;
       color: inherit;
       font-weight: 700;
-      font-size: larger;
+      font-size: 1.5em;
       margin-bottom: 10%
     }
   }
